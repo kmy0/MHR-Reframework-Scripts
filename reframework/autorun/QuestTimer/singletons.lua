@@ -25,10 +25,18 @@ function singletons.get_enemyman()
     return singletons.enemyman
 end
 
+function singletons.get_spacewatcher()
+    if not singletons.spacewatcher then
+        singletons.spacewatcher = sdk.get_managed_singleton('snow.wwise.WwiseChangeSpaceWatcher')
+    end
+    return singletons.spacewatcher
+end
+
 function singletons.init()
 	singletons.get_questman()
 	singletons.get_guiman()
 	singletons.get_enemyman()
+    singletons.get_spacewatcher()
 end
 
 return singletons

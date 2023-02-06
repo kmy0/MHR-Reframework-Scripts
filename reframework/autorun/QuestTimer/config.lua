@@ -18,7 +18,8 @@ config.default={
     xpos=188.0,
     ypos=169.0,
     dps_relative=1,
-    dps_target=1
+    dps_target=1,
+    show_village=false,
 }
 
 

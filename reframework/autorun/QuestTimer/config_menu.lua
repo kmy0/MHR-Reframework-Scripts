@@ -25,14 +25,14 @@ function config_menu.draw()
     _,config.current.show_timer = imgui.checkbox('Show Quest Timer', config.current.show_timer)
     _,config.current.show_hp = imgui.checkbox('Show Monster HP', config.current.show_hp)
     _,config.current.show_dps = imgui.checkbox('Show DPS', config.current.show_dps)
-    _,config.current.test = imgui.checkbox('Test', config.current.test)
+    _,config.current.show_village = imgui.checkbox('Show In Village', config.current.show_village)
     _,config.current.bg = imgui.checkbox('Show Background', config.current.bg)
-    _,config.current.font_size = imgui.slider_int('Font size (reqs script restart)', config.current.font_size, 1, 100)
+    _,config.current.font_size = imgui.slider_int('Font Size (Reqs Script Restart)', config.current.font_size, 1, 100)
     _,config.current.xpos = imgui.slider_int('X Pos', config.current.xpos, 0, timer.draw.x)
     _,config.current.ypos = imgui.slider_int('Y Pos', config.current.ypos, 0, timer.draw.y)
 
     if imgui.tree_node("DPS Options") then
-    	_,config.current.dps_relative = imgui.combo('DPS Calc',config.current.dps_relative,dps_relative)
+    	_,config.current.dps_relative = imgui.combo('DPS Relative To',config.current.dps_relative,dps_relative)
     	_,config.current.dps_target = imgui.combo('DPS Dealt To',config.current.dps_target,dps_target)
     	imgui.tree_pop()
     end

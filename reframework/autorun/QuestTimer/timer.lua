@@ -171,6 +171,9 @@ local function update_monster_data(enemy, last_update)
     ) then
 
         monsters.big[enemy].combat = is_combat
+        if not monsters.big[enemy].combat_start_time then
+            monsters.big[enemy].combat_start_time = singletons.questman:getQuestElapsedTimeSec()
+        end
         local time_dif = math.floor(
             singletons.questman:getQuestElapsedTimeSec()
             - monsters.big[enemy].combat_start_time
@@ -179,6 +182,10 @@ local function update_monster_data(enemy, last_update)
             monsters.big[enemy].combat_times,
             time_dif
         )
+
+        if times.combat.start == 0 then
+            times.combat.start = singletons.questman:getQuestElapsedTimeSec()
+        end
 
         if not is_player_in_combat() then
             local time_dif = math.floor(
@@ -496,7 +503,7 @@ local function display()
             first_hit=nil,
             combat={
                 start=0,
-                times={}
+                periods={}
             },
         }
         return false

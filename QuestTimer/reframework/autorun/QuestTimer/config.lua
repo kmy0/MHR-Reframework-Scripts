@@ -3,7 +3,7 @@ local config = {}
 local table_helpers
 
 config.config_file_name = 'QuestTimer/config.json'
-config.version = '1.0.1'
+config.version = '1.0.2'
 
 config.default={
     bg=true,

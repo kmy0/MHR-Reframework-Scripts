@@ -3,7 +3,7 @@ local config = {
     music_override=false,
     random=false
 }
-local version = '1.0.1'
+local version = '1.0.2'
 local config_path = 'ElgadoClouds/config.json'
 local window = {
     flags=0x10120,
@@ -79,6 +79,7 @@ local function draw()
             end
         end
     end
+    imgui.end_window()
 end
 
 

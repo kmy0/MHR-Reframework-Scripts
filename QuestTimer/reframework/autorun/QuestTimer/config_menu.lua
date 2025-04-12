@@ -52,7 +52,7 @@ function config_menu.draw()
     	_,config.current.border_color = imgui.color_picker_argb('',config.current.border_color)
     	imgui.tree_pop()
     end
-
+    imgui.end_window()
 end
 
 
